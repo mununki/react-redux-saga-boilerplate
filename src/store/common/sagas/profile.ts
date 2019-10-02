@@ -1,7 +1,7 @@
 import { call, put, take } from 'redux-saga/effects'
 import { history } from '../..'
 import user from '../../../apis/user'
-import { REDIRECT_URI } from '../../../costants'
+import { REDIRECT_URI } from '../../../constants'
 import { logger } from '../../../utils/logger'
 import {
   UPDATE_PROFILE_FAILURE,

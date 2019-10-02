@@ -1,7 +1,7 @@
 import { call, put, select } from 'redux-saga/effects'
 import { history } from '../..'
 import user from '../../../apis/user'
-import { REDIRECT_URI } from '../../../costants'
+import { REDIRECT_URI } from '../../../constants'
 import { logger } from '../../../utils/logger'
 import { SIGN_IN_SUCCESS } from '../../auth/actions'
 import {
