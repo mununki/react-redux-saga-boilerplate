@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { AuthService } from '../service/AuthService'
+import { getAuthTokenLocalStorage } from '../utils/handleLocalStorage'
 
 const isLocal = process.env.REACT_APP_LOCAL === 'local'
 
@@ -9,11 +9,10 @@ const instance = axios.create({
   params: {} // do not remove this, its added to add params later in the config
 })
 
-const authService = new AuthService()
 // Add a request interceptor
 instance.interceptors.request.use(
   async config => {
-    const token = authService.getToken()
+    const token = getAuthTokenLocalStorage()
 
     if (token) {
       config.headers.common['Authorization'] = 'Bearer ' + token
